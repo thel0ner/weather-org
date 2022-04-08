@@ -1,0 +1,5 @@
+<app-goto-reports-btn [refetch]="refresh"></app-goto-reports-btn>
+<app-search-field (selectedGeo)="selectedGeo = $event"></app-search-field>
+<app-weather-report *ngIf="selectedGeo" [geo]="selectedGeo" (freshForcast)="emittedForcast = $event">
+    <app-save-data *ngIf="emittedForcast" [forcast]="emittedForcast" (savedData)="refresh = $event"></app-save-data>
+</app-weather-report>

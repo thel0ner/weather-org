@@ -1,0 +1,22 @@
+<ng-content></ng-content>
+<div class="row">
+    <div class="col-12 p-2 d-flex justify-content-center align-items-center" *ngIf="loading">
+        <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <ng-container *ngIf="weatherInfo && !loading">
+        <div class="col-lg-6 col-md-12">
+            <app-clouds-chart [forcast]="weatherInfo"></app-clouds-chart>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <app-temper-chart [forcast]="weatherInfo"></app-temper-chart>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <app-temper-range-chart [forcast]="weatherInfo"></app-temper-range-chart>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <app-humidity-chart [forcast]="weatherInfo"></app-humidity-chart>
+        </div>
+    </ng-container>
+</div>
