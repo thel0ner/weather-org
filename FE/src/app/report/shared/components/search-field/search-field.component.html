@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-12 mb-2">
+        <ng-select [placeholder]="'search for your city. example: Tehran'" (change)="monitorNgSelectChanges($event)"
+            [loading]="ngSelectSpinner" [typeahead]="ngSelectTypeHead">
+            <ng-option *ngFor="let item of ngSlectItems" [value]="item">
+                {{item.name}}
+            </ng-option>
+        </ng-select>
+    </div>
+</div>
